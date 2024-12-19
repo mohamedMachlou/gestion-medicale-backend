@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     nom: { type: DataTypes.STRING(100), allowNull: false },
     adresse: { type: DataTypes.STRING(255), allowNull: false },
     specialite: { type: DataTypes.STRING(100), allowNull: false }
-  });
+  }, {
+    timestamps: true
+});
 
   Cabinet.associate = models => {
     Cabinet.hasMany(models.Medecin, {

@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     patient_id: { type: DataTypes.STRING, allowNull: false },
     fichier_id: { type: DataTypes.STRING, allowNull: false },
     date_ajout: { type: DataTypes.DATE, allowNull: false }
-  });
+  }, {
+    timestamps: true
+});
 
   HistoriqueFichiersMedicaux.associate = models => {
     HistoriqueFichiersMedicaux.belongsTo(models.Patient, {

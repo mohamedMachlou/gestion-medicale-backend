@@ -11,7 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     heure: { type: DataTypes.TIME, allowNull: false },
     patient_id: { type: DataTypes.STRING, allowNull: false },
     medecin_id: { type: DataTypes.STRING, allowNull: false }
-  });
+  }, {
+    timestamps: true
+});
 
   RendezVous.associate = models => {
     RendezVous.belongsTo(models.Patient, {

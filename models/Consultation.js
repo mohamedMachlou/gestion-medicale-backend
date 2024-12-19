@@ -13,7 +13,9 @@ module.exports = (sequelize, DataTypes) => {
     traitement: { type: DataTypes.TEXT, allowNull: false },
     patient_id: { type: DataTypes.STRING, allowNull: false },
     medecin_id: { type: DataTypes.STRING, allowNull: false }
-  });
+  }, {
+    timestamps: true
+});
 
   Consultation.associate = models => {
     Consultation.belongsTo(models.Patient, {

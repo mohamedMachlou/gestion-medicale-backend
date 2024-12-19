@@ -11,7 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     type: { type: DataTypes.STRING(50), allowNull: false },
     chemin_acces: { type: DataTypes.STRING(255), allowNull: false },
     date_creation: { type: DataTypes.DATE, allowNull: false }
-  });
+  }, {
+    timestamps: true
+});
 
   FichierMedical.associate = models => {
     FichierMedical.hasMany(models.HistoriqueFichiersMedicaux, {

@@ -15,7 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     telephone: { type: DataTypes.STRING(15), allowNull: false },
     email: { type: DataTypes.STRING(100), allowNull: false },
     mot_de_passe: { type: DataTypes.STRING(255), allowNull: false }
-  });
+  }, {
+    timestamps: true
+});
 
   Patient.associate = models => {
     Patient.hasMany(models.Consultation, {
