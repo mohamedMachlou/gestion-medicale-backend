@@ -2,11 +2,7 @@ const { v4: uuidv4 } = require('uuid');
 
 module.exports = (sequelize, DataTypes) => {
   const Medecin = sequelize.define('Medecin', {
-    id: {
-      type: DataTypes.STRING,
-      defaultValue: uuidv4,
-      primaryKey: true
-    },
+    code: { type: DataTypes.STRING(255), allowNull: false },
     nom: { type: DataTypes.STRING(50), allowNull: false },
     prenom: { type: DataTypes.STRING(50), allowNull: false },
     specialite: { type: DataTypes.STRING(100), allowNull: false },
